@@ -1,25 +1,29 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
-
+import firebase from "firebase";
 import API from "../../axios/API";
 
-export const getAllProducts = () => dispatch => {
+export const getAllProducts = () => async dispatch => {
   dispatch({
     type: GET_ALL_PRODUCTS_BEGIN
   });
-  return API({
-    method: "GET",
-    url: `/products`
-  })
+  // return API({
+  //   method: "GET",
+  //   url: `/products`
+  // })
+  await firebase.firestore().collection('allProduct')
+  .get()
+
     .then(res => {
+      // alert("hii")
+      var allProduct = []
+      res.forEach((docUser) => {
+        allProduct.push(docUser.data())
+      })
+  
       dispatch({
         type: GET_ALL_PRODUCTS_SUCCESS,
-        payload: res
+        payload: allProduct
       });
-      return res;
+      return allProduct;
     })
     .catch(error => {
       dispatch({
@@ -34,18 +38,34 @@ export const getProduct = id => dispatch => {
   dispatch({
     type: GET_PRODUCT_BEGIN
   });
-  return API({
-    method: "GET",
-    url: `/products/${id}`
-  })
-    .then(res => {
+   firebase.firestore().collection('allProduct')
+   .where("_id", "==", id).get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // alert(doc.data().title)
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        // });
+    
+  // .doc(id)
+  // .get()
+  // return API({
+  //   method: "GET",
+  //   url: `/products/${id}`
+  // })
+    // .then(res => {
+      // alert(res)
       dispatch({
         type: GET_PRODUCT_SUCCESS,
-        payload: res
-      });
-      return res;
+        payload: doc.data()
+      })
+      return doc.data();
+    })
+      
+      
     })
     .catch(error => {
+      alert(error.message)
       dispatch({
         type: GET_PRODUCT_FAIL,
         payload: { error }

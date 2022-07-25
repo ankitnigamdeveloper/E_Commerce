@@ -1,10 +1,7 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer(props) {
   return (
@@ -21,7 +18,8 @@ function Footer(props) {
                   <a href="#">FAQs</a>
                 </li>
                 <li>
-                  <a href="contact.html">Contact us</a>
+                <Link to = "/fashion-shop/contact" >contact</Link>
+                  {/* <a href="contact.html">Contact us</a> */}
                 </li>
               </ul>
             </div>
@@ -58,11 +56,7 @@ function Footer(props) {
           <div className="col-lg-12">
             <div className="footer_nav_container">
               <div className="cr">
-                ©2018 All Rights Reserverd. This template is made with{" "}
-                <i className="fa fa-heart-o" aria-hidden="true"></i> by{" "}
-                <a href="https://quintuslabs.com/" target="_blank">
-                  Quintus Labs
-                </a>
+                Create by MindMines Infotech ©2022 All Rights Reserverd.
               </div>
             </div>
           </div>

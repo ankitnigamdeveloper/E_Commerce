@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React, { Component } from "react";
 import { login } from "../../ServerRequest";
@@ -62,6 +58,7 @@ class Home extends Component {
   };
 
   render() {
+    
     const { products, departments } = this.props;
     return (
       <div>

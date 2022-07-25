@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React, { Component } from "react";
 import jumpTo from "../../modules/Navigation";
@@ -45,11 +41,12 @@ class RegisterForm extends Component {
     this.props
       .userRegister(name, email, password, password)
       .then(res => {
-        console.log(res);
+        // console.log(res);
         this.props.loginClicked();
         this.setState({ loading: false });
       })
       .catch(error => {
+        alert(error.message)
         console.log(error.response);
         this.setState({ loading: false });
       });

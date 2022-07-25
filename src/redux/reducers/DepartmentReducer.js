@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import {
   GET_DEPARTMENTS_BEGIN,
@@ -26,12 +22,14 @@ export default (state = initialState, action) => {
     case GET_DEPARTMENTS_SUCCESS:
       return {
         loading: false,
-        departments: action.payload.data.departments
+        departments: action.payload
+        // departments:[{departmentName:"Men", categories:"Watch, Cloths"},{departmentName:"Women", categories:"Watch, Cloths"}],
       };
     case GET_DEPARTMENTS_FAIL:
       return {
         loading: false,
-        error: action.payload.error.response.data
+        // departments:[{departmentName:"Men", categories:"Watch, Cloths"},{departmentName:"Women", categories:"Watch, Cloths"}],
+        error: action.payload
       };
     default:
       return state;

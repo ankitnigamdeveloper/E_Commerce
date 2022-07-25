@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import {
   GET_ALL_PRODUCTS_BEGIN,
@@ -41,12 +37,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        products: action.payload.data.products
+        // products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        // title:"product test", price: 100, department:"Men"}]
+        products: action.payload
       };
     case GET_ALL_PRODUCTS_FAIL:
       return {
         ...state,
         loading: false,
+        // products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        // title:"product test", price: 100, department:"Men"}],
         error: action.payload.error.response.data
       };
     case GET_PRODUCT_BEGIN:
@@ -59,13 +59,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        product: action.payload.data.product
+        product: action.payload
       };
     case GET_PRODUCT_FAIL:
       return {
         ...state,
         loading: false,
-        error: action.payload.error.response.data
+        error: action.payload
       };
     case GET_PRODUCTS_BY_CATEGORY_BEGIN:
       return {
@@ -77,13 +77,17 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        products: action.payload.data.products
+        products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        title:"product test", price: 100}]
+        // products: action.payload.data.products
       };
     case GET_PRODUCTS_BY_CATEGORY_FAIL:
       return {
         ...state,
         loading: false,
-        error: action.payload.error.response.data
+        error: action.payload.error.response.data,
+        products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        title:"product test", price: 100, department:"Men"}]
       };
     case SEARCH_BEGIN:
       return {
@@ -95,13 +99,17 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        products: action.payload.data.products
+        // products: action.payload.data.products
+        products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        title:"product test", price: 100, department:"Men"}]
       };
     case SEARCH_FAIL:
       return {
         ...state,
         loading: false,
-        error: action.payload.error.response.data
+        error: action.payload.error.response.data,
+        products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        title:"product test", price: 100, department:"Men"}]
       };
     case APPLY_FILTERS_BEGIN:
       return {
@@ -113,13 +121,17 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        products: action.payload.data.products
+        // products: action.payload.data.products
+        products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        title:"product test", price: 100, department:"Men"}]
       };
     case APPLY_FILTERS_FAIL:
       return {
         ...state,
         loading: false,
-        error: action.payload.error.response.data
+        error: action.payload.error.response.data,
+        products:[{_id:1, imagePath:"http://antiquerubyreact.aliansoftware.net/all_live_images/BBButchers-CarpetBaggerAppetizer.jpg", 
+        title:"product test", price: 100, department:"Men"}]
       };
     default:
       return state;

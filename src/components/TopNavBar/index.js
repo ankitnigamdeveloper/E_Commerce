@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React, { Component } from "react";
 import LoginRegister from "../LoginRegisterModal";
@@ -40,7 +36,7 @@ class TopNavBar extends Component {
           <div className="row">
             <div className="col-md-6">
               <div className="top_nav_left">
-                free shipping on all u.s orders over $50
+                free shipping on all India orders over Rs.500
               </div>
             </div>
             <div className="col-md-6 text-right">
@@ -91,7 +87,7 @@ class TopNavBar extends Component {
                   Auth.getToken() !== undefined ? (
                     <li className="account">
                       <a href="#">
-                        {`Welcome ${Auth.getUserDetails().user_name}`}
+                        {`Welcome ${Auth.getUserDetails().name}`}
                         <i className="fa fa-angle-down"></i>
                       </a>
                       <ul className="account_selection">

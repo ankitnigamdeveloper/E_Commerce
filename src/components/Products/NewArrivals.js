@@ -1,8 +1,3 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
 
 import React, { Component } from "react";
 import SingleProduct from "./SingleProduct";
@@ -14,7 +9,8 @@ class NewArrivals extends Component {
     this.state = {
       products: this.props.products,
       productsBAK: this.props.products,
-      departments: this.props.departments
+      departments: this.props.departments,
+      selectedOption:"All"
     };
   }
 

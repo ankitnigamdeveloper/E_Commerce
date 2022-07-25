@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
@@ -14,10 +10,11 @@ import BaseLayout from "../layouts/BaseLayout";
 import Home from "../views/Home/HomeContainer";
 import SingleProductContainer from "../views/Product/SingleProductContainer";
 import CategoryContainer from "../views/Category/CategoryContainer";
+import Contact from "../views/Contact";
 
 var routes = [
   {
-    path: "/fashion-cube",
+    path: "/",
     exact: true,
     layout: BaseLayout,
     component: Home,
@@ -26,15 +23,21 @@ var routes = [
   {
     path: "/home",
     layout: BaseLayout,
-    component: () => <Redirect to="/fashion-cube" />,
+    component: () => <Redirect to="/" />,
   },
   {
-    path: "/fashion-cube/single-product/:id",
+    path: "/fashion-shop/contact",
+    exact: true,
+    layout: BaseLayout,
+    component: Contact,
+  },
+  {
+    path: "/fashion-shop/single-product/:id",
     layout: BaseLayout,
     component: SingleProductContainer,
   },
   {
-    path: "/fashion-cube/shops/:category",
+    path: "/fashion-shop/shops/:category",
     layout: BaseLayout,
     component: CategoryContainer,
   },

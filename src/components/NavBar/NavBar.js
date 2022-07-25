@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -34,16 +30,16 @@ class NavBar extends Component {
     this.setState({ activeclass: !this.state.activeclass });
   };
   render() {
-    const { departments, cart } = this.props;
-
+    const {  cart, departments } = this.props;
+// const departments = [{departmentName:"Men", categories:"Watch, Cloths"},{departmentName:"Women", categories:"Watch, Cloths"}]
     return (
       <div className="main_nav_container">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-right">
               <div className="logo_container">
-                <Link to="/fashion-cube">
-                  Fashion<span>Cube</span>
+                <Link to="/fashion-shop">
+                  Fashion<span>Shop</span>
                 </Link>
               </div>
               <nav className="navbar">
@@ -68,7 +64,7 @@ class NavBar extends Component {
                                     return (
                                       <li key={idx}>
                                         <a
-                                          href={`/fashion-cube/shops/${item.departmentName}/${i}`}
+                                          href={`/fashion-shop/shops/${item.departmentName}/${i}`}
                                         >
                                           {i}
                                         </a>
@@ -84,7 +80,8 @@ class NavBar extends Component {
                   </li>
 
                   <li>
-                    <a href="contact.html">contact</a>
+                    <Link to = "/fashion-shop/contact" >contact</Link>
+                    {/* <a href="contact.html">contact</a> */}
                   </li>
                 </ul>
                 <ul className="navbar_user">

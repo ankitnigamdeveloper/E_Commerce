@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React, { Component } from "react";
 import LoginRegister from "../../components/LoginRegisterModal";
@@ -171,7 +167,7 @@ class SingleProduct extends Component {
                           className="single_product_image_background"
                           style={{
                             backgroundImage: `url(${
-                              this.state.pic || this.props.product.imagePath
+                              this.state.pic || this.props.product.image
                             })`,
                           }}
                         />

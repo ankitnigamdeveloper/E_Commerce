@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import React from "react";
 import jumpTo from "../../modules/Navigation";
@@ -14,18 +10,18 @@ function SingleProduct(props) {
       <div
         className="product discount product_filter"
         onClick={() =>
-          jumpTo(`/fashion-cube/single-product/${productItem._id}`)
+          jumpTo(`/fashion-shop/single-product/${productItem._id}`)
         }
       >
         <div className="product_image">
-          <img src={productItem.imagePath} alt="" className="img-fluid" />
+          <img src={productItem.image} alt="" className="img-fluid" />
         </div>
         <div className="favorite favorite_left">
           <i className="far fa-heart"></i>
         </div>
-        {/* <div className="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-          <span>-$20</span>
-        </div> */}
+        <div className="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+          <span>-$30</span>
+        </div>
         <div className="product_info">
           <h6 className="product_name">
             <div>{productItem.title}</div>

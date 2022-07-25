@@ -1,15 +1,13 @@
 {
-  "name": "fashioncube",
+  "name": "fashionshop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://quintuslabs.github.io/fashion-cube",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/quintuslabs/fashion-cube"
+    "type": "git"
   },
   "keywords": [
     "fashion",
-    "fashion-cube",
+    "fashion-shop",
     "e-commerce",
     "shopping",
     "Shopping cart"
@@ -22,6 +20,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
+    "firebase": "^8.10.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

@@ -1,23 +1,38 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
-
+import firebase from "firebase";
+import Auth from "../../modules/Auth";
 import { login } from "../../ServerRequest";
 
 export const userLogin = (email, password) => dispatch => {
   dispatch({
     type: LOGIN_BEGIN
   });
-  return login(email, password)
+  return firebase.auth().signInWithEmailAndPassword(email, password)
+  // login(email, password)
     .then(res => {
+//       alert(email)
+//       firebase.firestore()
+//       .collection("AllUser")
+//       .where('uid', '==', res.user.uid).get().then(rq => {
+//         alert(rq.size)
+//           // //console.log("rq --> ", rq.docs[0].data())
+//           if (rq.size > 0) {
+//               const { email, uid,  name} = rq.docs[0].data()
+//             const data = {
+//                 email:email,
+//                 uid:uid,
+//                 name:name,
+//                 // createdAt:createdAt
+//   }
+// alert(email + name + uid)
+      Auth.setUserToken(res.user);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res
       });
 
       return res;
+    // }
+    // }) 
     })
     .catch(error => {
       dispatch({

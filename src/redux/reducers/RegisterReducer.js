@@ -1,8 +1,4 @@
-/*
- ** Author: Santosh Kumar Dash
- ** Author URL: http://santoshdash.epizy.com/
- ** Github URL: https://github.com/quintuslabs/fashion-cube
- */
+
 
 import {
   POST_REGISTER_BEGIN,
@@ -31,7 +27,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         register_loading: false,
-        error: action.payload.error.response.data
+        error: action.payload
       };
     default:
       return state;

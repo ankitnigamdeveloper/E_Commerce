@@ -4,7 +4,7 @@
 
 front-end: Reactjs, Redux, Axios, Sass, react-bootstrap
 
-[Live Demo](https://quintuslabs.github.io/fashion-cube)
+[Live Demo](https://quintuslabs.github.io/fashion-shop)
 
 ## This project is created using:
 
