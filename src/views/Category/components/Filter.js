@@ -5,7 +5,9 @@ import React, { Component } from "react";
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      activeIndex:null
+    };
   }
   render() {
     return (
@@ -14,10 +16,11 @@ class Filter extends Component {
           <h5>Product Category</h5>
         </div>
         <ul class="sidebar_categories">
-          <li>
-            <a href="#">Men</a>
+          <li  onMouseDow={()=>alert("hii")} class= {this.state.activeIndex == 0 ?"active":""}>
+          {/* <button onClick={()=>alert("hii")}>Men</button> */}
+            <a href="#" onKeyPress={()=>this.setState({activeIndex:0})}>Men</a>
           </li>
-          <li class="active">
+          <li >
             <a href="#">
               <span>
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i>

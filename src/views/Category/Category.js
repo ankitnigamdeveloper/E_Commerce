@@ -88,14 +88,15 @@ class Category extends Component {
                         <li>
                           <span class="type_sorting_text">Default Sorting</span>
                           <i class="fa fa-angle-down"></i>
-                          <ul class="sorting_type">
+                          <ul class="sorting_type ">
+                            
                             <li
                               class="type_sorting_btn"
                               data-isotope-option='{ "sortBy": "original-order" }'
                             >
                               <span>Default Sorting</span>
                             </li>
-                            <li
+                                <li
                               class="type_sorting_btn"
                               data-isotope-option='{ "sortBy": "price" }'
                             >

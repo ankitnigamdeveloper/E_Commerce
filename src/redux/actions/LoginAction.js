@@ -10,29 +10,30 @@ export const userLogin = (email, password) => dispatch => {
   // login(email, password)
     .then(res => {
 //       alert(email)
-//       firebase.firestore()
-//       .collection("AllUser")
-//       .where('uid', '==', res.user.uid).get().then(rq => {
-//         alert(rq.size)
+     return firebase.firestore()
+      .collection("AllUser")
+      .where('uid', '==', res.user.uid).get().then(rq => {
+        // alert(rq.size)
 //           // //console.log("rq --> ", rq.docs[0].data())
-//           if (rq.size > 0) {
-//               const { email, uid,  name} = rq.docs[0].data()
-//             const data = {
-//                 email:email,
-//                 uid:uid,
-//                 name:name,
-//                 // createdAt:createdAt
-//   }
+          if (rq.size > 0) {
+              const { email, uid,  name} = rq.docs[0].data()
+            const data = {
+                email:email,
+                uid:uid,
+                name:name,
+            }
+                // createdAt:createdAt
+  
 // alert(email + name + uid)
-      Auth.setUserToken(res.user);
+      Auth.setUserToken(data);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res
       });
 
       return res;
-    // }
-    // }) 
+    }
+    }) 
     })
     .catch(error => {
       dispatch({

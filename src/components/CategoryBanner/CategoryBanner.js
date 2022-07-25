@@ -19,7 +19,7 @@ function CategoryBanner(props) {
               data-aos="fade-right"
             >
               <div className="banner_category">
-                <a href="categories.html">women's</a>
+                <a href="/fashion-shop/shops/Women">women's</a>
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@ function CategoryBanner(props) {
               data-aos="fade-up"
             >
               <div className="banner_category">
-                <a href="categories.html">accessories's</a>
+                <a href="/fashion-shop/shops/Women/accessories's">accessories's</a>
               </div>
             </div>
           </div>
@@ -45,7 +45,7 @@ function CategoryBanner(props) {
               data-aos="fade-left"
             >
               <div className="banner_category">
-                <a href="categories.html">men's</a>
+                <a href="/fashion-shop/shops/Men">men's</a>
               </div>
             </div>
           </div>
