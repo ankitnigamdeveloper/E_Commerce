@@ -13,7 +13,7 @@ front-end: Reactjs, Redux, Axios, Sass, react-bootstrap
 - Cart
 - Login / Register
 
-##Demo
+## Demo
 
 
 https://user-images.githubusercontent.com/109139213/190990435-b7a8cf08-b55b-4fdd-8e02-3e637d611c0b.mp4
