@@ -1,4 +1,4 @@
-# Fashion Cube-Ecommerce Application
+# Fashion Shop-Ecommerce Application
 
 #General Info
 
