@@ -4,6 +4,9 @@
 
 front-end: Reactjs, Redux, Axios, Sass, react-bootstrap
 
+back-end: Firebase
+
+
 ## Future Features
 
 - Home (List products)
